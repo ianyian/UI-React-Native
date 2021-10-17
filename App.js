@@ -15,9 +15,9 @@ export default function App() {
   const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
 
   useEffect(() => {
-    AsyncStorage.getItem("alreadyLauncshed5").then((value) => {
+    AsyncStorage.getItem("alreadyLaunched5").then((value) => {
       if (value == null) {
-        AsyncStorage.setItem("alreadyLauncshed5", "true");
+        AsyncStorage.setItem("alreadyLaunched5", "true");
         setIsFirstLaunch(true);
         console.log("ayncstorage already launched is true");
       } else {

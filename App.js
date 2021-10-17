@@ -13,13 +13,16 @@ const AppStack = createStackNavigator();
 
 export default function App() {
   const [isFirstLaunch, setIsFirstLaunch] = React.useState(null);
+
   useEffect(() => {
-    AsyncStorage.getItem("alreadyLaunched").then((value) => {
+    AsyncStorage.getItem("alreadyLauncshed5").then((value) => {
       if (value == null) {
-        AsyncStorage.setItem("alreadyLaunched", "true");
+        AsyncStorage.setItem("alreadyLauncshed5", "true");
         setIsFirstLaunch(true);
+        console.log("ayncstorage already launched is true");
       } else {
         setIsFirstLaunch(false);
+        console.log("ayncstorage already launched is falsexx");
       }
     });
   }, []);
@@ -27,6 +30,7 @@ export default function App() {
   if (isFirstLaunch === null) {
     return null;
   } else if (isFirstLaunch === true) {
+    console.log("isFirstLaunch === true");
     return (
       <NavigationContainer>
         <AppStack.Navigator headerMode="none">
@@ -36,6 +40,7 @@ export default function App() {
       </NavigationContainer>
     );
   } else {
+    console.log("isFirstLaunch === true");
     return <LoginScreen />;
   }
 }

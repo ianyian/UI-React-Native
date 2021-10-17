@@ -26,13 +26,16 @@ const Dots = ({ selected }) => {
     />
   );
 };
-
 const Skip = ({ ...props }) => (
-  <Button title="Skip" color="#000000" {...props} />
+  <TouchableOpacity style={{ marginHorizontal: 10 }} {...props}>
+    <Text style={{ fontSize: 16 }}>Skip</Text>
+  </TouchableOpacity>
 );
 
 const Next = ({ ...props }) => (
-  <Button title="Next" color="#000000" {...props} />
+  <TouchableOpacity style={{ marginHorizontal: 10 }} {...props}>
+    <Text style={{ fontSize: 16 }}>Next</Text>
+  </TouchableOpacity>
 );
 
 const Done = ({ ...props }) => (
